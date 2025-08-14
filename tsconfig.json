@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "strict": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["Components/*"],
-      "@entities/*": ["Entities/*"],
-      "@pages/*": ["Pages/*"]
-    }
-  }
+    "jsx": "react-jsx",
+    "outDir": "./dist",        // <-- Compila para a pasta dist
+    "rootDir": "./src",        // <-- Código fonte fica em src
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
-
