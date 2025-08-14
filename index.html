@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SinergIA Dashboard</title>
+
+    <!-- CSP ajustada sem bloquear o Vite e React DevTools -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' 'wasm-unsafe-eval';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        connect-src 'self' ws: wss:;
+      "
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Carrega o cliente do Vite -->
+    <script type="module" src="/@vite/client"></script>
+    <!-- Carrega o app React -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

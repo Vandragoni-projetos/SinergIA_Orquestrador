@@ -1,0 +1,149 @@
+{
+  "name": "Agent",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do agente"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do agente"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "articles_and_blogs",
+        "customer_service",
+        "ebook",
+        "ecommerce",
+        "emails",
+        "letter",
+        "podcast",
+        "press_release",
+        "research",
+        "reviews",
+        "rewriter",
+        "seo",
+        "social_media",
+        "video_scripts",
+        "website_copy",
+        "advertisements",
+        "marketing",
+        "other"
+      ],
+      "default": "other"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "wizard",
+        "simple"
+      ],
+      "default": "simple"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "template": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "textarea",
+                    "number",
+                    "email",
+                    "url",
+                    "select"
+                  ]
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "placeholder": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "options_grouped": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "options": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "value": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_editable": {
+      "type": "boolean",
+      "default": true
+    },
+    "origin": {
+      "type": "string",
+      "enum": [
+        "default",
+        "custom",
+        "cloned"
+      ],
+      "default": "custom"
+    },
+    "is_favorite": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "category",
+    "steps"
+  ]
+}

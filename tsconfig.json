@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["Components/*"],
+      "@entities/*": ["Entities/*"],
+      "@pages/*": ["Pages/*"]
+    }
+  }
+}
+

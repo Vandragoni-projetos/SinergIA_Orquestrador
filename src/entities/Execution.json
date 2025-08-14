@@ -1,0 +1,51 @@
+{
+  "name": "Execution",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "description": "ID do agente executado"
+    },
+    "agent_name": {
+      "type": "string",
+      "description": "Nome do agente executado"
+    },
+    "inputs": {
+      "type": "object",
+      "description": "Dados de entrada fornecidos"
+    },
+    "generated_prompt": {
+      "type": "string",
+      "description": "Prompt gerado final"
+    },
+    "output": {
+      "type": "string",
+      "description": "Resultado da execução"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "running",
+        "completed",
+        "failed"
+      ],
+      "default": "pending",
+      "description": "Status da execução"
+    },
+    "execution_time": {
+      "type": "number",
+      "description": "Tempo de execução em segundos"
+    },
+    "tokens_used": {
+      "type": "number",
+      "description": "Tokens utilizados"
+    }
+  },
+  "required": [
+    "agent_id",
+    "agent_name",
+    "inputs",
+    "generated_prompt"
+  ]
+}
